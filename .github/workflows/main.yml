@@ -1,0 +1,19 @@
+name: Prosty Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+
+    - name: Wyświetl Komunikat
+      run: echo "Workflow działa!"
+
+    
