@@ -1,4 +1,4 @@
-name: Prosty Workflow
+name: Workflow z Wbudowaną Akcją
 
 on:
   push:
@@ -13,7 +13,13 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v2
 
-    - name: Wyświetl Komunikat
-      run: echo "Workflow działa!"
+    - name: Ustaw Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
 
-    
+    - name: Instalacja Zależności
+      run: npm install
+
+    - name: Sprawdzenie Stylu Kodu
+      run: npm run lint
